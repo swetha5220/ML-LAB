@@ -1,0 +1,88 @@
+#print name
+print('swetha')
+
+#addition
+a=int(input('enter a'))
+b=int(input('enter b'))
+print(a+b)
+
+
+#linearsearch
+def linearsearch(arr, x):
+   for i in range(len(arr)):
+      if arr[i] == x:
+         return i
+   return -1
+a = []
+n = int(input("Enter number of elements : "))
+for i in range(0, n):
+    ele = int(input())
+    a.append(ele)
+k=int(input("enter the key"))
+linearsearch(a,k)
+
+
+
+#binary search
+def binarysearch(arr,k,first,last):
+    mid=int (first+last/2);
+    if arr[mid]==k:
+        return mid;
+    elif arr[mid]>k:
+        return binarysearch(arr,k,first,mid-1)
+    elif arr[mid]<k:
+        return binarysearch(arr,k,mid+1,last)
+return -1;  
+a = []
+n = int(input("Enter number of elements : "))
+for i in range(0, n):
+    ele = int(input())
+    a.append(ele)
+k=int(input("enter the key"))
+res=int(binarysearch(a,k,0,n));
+print(res);
+
+
+#bubble sort
+a = []
+n = int(input("Enter number of elements : "))
+for i in range(0, n):
+    ele = int(input())
+    a.append(ele)
+
+for i in range(0,n):
+    ele=a[i]
+    for j in range(i+1,n):
+        if(a[j]<ele):
+            temp=a[i]
+            a[i]=a[j]
+            a[j]=temp;
+print(a)
+
+
+# selection sort
+arr =[]
+n=int(input("Enter the size of array:"))
+for i in range(0,n):
+    ele=int(input())
+    arr.append(ele)
+
+pos=-1
+for i in range(0,n):
+    pos=i
+    for j in range(i+1,n):
+        if(arr[j]<arr[pos]):
+            pos=j
+    if(pos!=i):
+        temp=arr[i]
+        arr[i]=arr[pos]
+        arr[pos]=temp
+       
+print(arr)
+
+
+
+
+#reading from a text file
+file1 = open("/home/root1/1.txt","r")
+file1.readlines()
